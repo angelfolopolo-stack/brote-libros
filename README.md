@@ -68,7 +68,7 @@ git init
 git add .
 git commit -m "Brote Libros: proyecto inicial"
 git branch -M main
-git remote add origin https://github.com/TU_USUARIO/brote-libros.git
+git remote add origin https://github.com/angelfolopolo-stack/brote-libros.git
 git push -u origin main
 ```
 
@@ -76,19 +76,11 @@ git push -u origin main
 
 ## Desplegar en Vercel
 
-JSON Server solo corre en tu computadora, así que en internet se usa **My JSON Server**, que lee el `db.json` directamente de tu repositorio público de GitHub:
-
-```
-https://my-json-server.typicode.com/TU_USUARIO/brote-libros
-```
-
 1. Entra a vercel.com e inicia sesión con GitHub.
 2. **Add New → Project** y elige el repositorio `brote-libros`. Vercel detecta Vite solo.
-3. En **Environment Variables** agrega:
-   - Nombre: `VITE_API_URL`
-   - Valor: `https://my-json-server.typicode.com/TU_USUARIO/brote-libros`
-4. Clic en **Deploy**.
+3. Clic en **Deploy**. No hace falta configurar variables.
+
+JSON Server solo corre en tu computadora. Por eso, en la versión publicada, `src/services/api.js` lee los mismos datos de `db.json` incluidos en la página (los POST se simulan).
+Si más adelante despliegas un JSON Server en internet, agrega en Vercel la variable `VITE_API_URL` con su dirección.
 
 El archivo `vercel.json` hace que las rutas (`/catalogo`, `/carrito`, etc.) funcionen al recargar la página. Para Netlify, lo mismo lo hace `public/_redirects`.
-
-> En My JSON Server los POST responden bien pero no se guardan (es una API de prueba).

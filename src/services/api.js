@@ -1,9 +1,16 @@
-// Servicio para consumir la API REST (JSON Server).
-// En local corre en http://localhost:3001 (npm run api).
-// Al desplegar se puede cambiar con la variable de entorno VITE_API_URL.
-export const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001'
+import dbLocal from '../../db.json'
+
+// Servicio para consumir la API REST.
+// - En tu computadora (npm start) usa JSON Server en http://localhost:3001.
+// - Publicado (Vercel) usa los mismos datos de db.json incluidos en la página.
+// - Si defines VITE_API_URL, usa esa API (por ejemplo, un JSON Server en internet).
+const API_EXTERNA = import.meta.env.VITE_API_URL
+export const API_URL = API_EXTERNA || (import.meta.env.DEV ? 'http://localhost:3001' : '')
+const MODO_ESTATICO = !API_URL
 
 async function pedir(ruta, opciones = {}) {
+  if (MODO_ESTATICO) return pedirEstatico(ruta, opciones)
+
   const respuesta = await fetch(`${API_URL}${ruta}`, {
     headers: { 'Content-Type': 'application/json' },
     ...opciones,
@@ -17,6 +24,31 @@ async function pedir(ruta, opciones = {}) {
     throw new Error(`Error ${respuesta.status} al consultar la API`)
   }
   return respuesta.json()
+}
+
+// Simula la API con los datos de db.json (para la versión publicada).
+function pedirEstatico(ruta, opciones) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const [camino, consulta] = ruta.split('?')
+      const [, recurso, id] = camino.split('/')
+      const lista = dbLocal[recurso]
+
+      if (!lista) return reject(Object.assign(new Error('No encontrado'), { status: 404 }))
+
+      if (opciones.method === 'POST') {
+        return resolve({ ...JSON.parse(opciones.body), id: Date.now() })
+      }
+
+      if (id) {
+        const item = lista.find((x) => String(x.id) === id)
+        return item ? resolve(item) : reject(Object.assign(new Error('No encontrado'), { status: 404 }))
+      }
+
+      const filtros = new URLSearchParams(consulta)
+      resolve(lista.filter((x) => [...filtros].every(([k, v]) => String(x[k]) === v)))
+    }, 300)
+  })
 }
 
 // GET
