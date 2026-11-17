@@ -1,0 +1,24 @@
+{
+  "categorias": [
+    { "id": "habitos", "nombre": "Hábitos y productividad", "descripcion": "Organiza tu tiempo y crea rutinas que sí funcionan.", "inicial": "H", "color": "#F0C9A8" },
+    { "id": "finanzas", "nombre": "Finanzas personales", "descripcion": "Aprende a ahorrar, invertir y ordenar tu dinero.", "inicial": "F", "color": "#F7E2A0" },
+    { "id": "bienestar", "nombre": "Bienestar emocional", "descripcion": "Autoestima, mindfulness y relaciones sanas.", "inicial": "B", "color": "#CFE0C8" },
+    { "id": "liderazgo", "nombre": "Liderazgo y carrera", "descripcion": "Comunicación, liderazgo y crecimiento profesional.", "inicial": "L", "color": "#D9D2EC" }
+  ],
+  "libros": [
+    { "id": 1, "titulo": "Hábitos atómicos", "autor": "James Clear", "categoria": "habitos", "precio": 69.9, "stock": 12, "destacado": true, "portada": "#E8743B", "tinta": "#1B1B18", "descripcion": "Cómo pequeños cambios diarios se acumulan hasta producir grandes resultados." },
+    { "id": 2, "titulo": "El poder de los hábitos", "autor": "Charles Duhigg", "categoria": "habitos", "precio": 59.9, "stock": 8, "destacado": false, "portada": "#3E6B8A", "tinta": "#FFFFFF", "descripcion": "Explica por qué repetimos lo que hacemos y cómo cambiar una rutina." },
+    { "id": 3, "titulo": "Mindset", "autor": "Carol S. Dweck", "categoria": "habitos", "precio": 64.9, "stock": 5, "destacado": false, "portada": "#F2C94C", "tinta": "#1B1B18", "descripcion": "La diferencia entre una mentalidad fija y una mentalidad de crecimiento." },
+    { "id": 4, "titulo": "Padre rico, padre pobre", "autor": "Robert T. Kiyosaki", "categoria": "finanzas", "precio": 54.9, "stock": 15, "destacado": true, "portada": "#7A4E9C", "tinta": "#FFFFFF", "descripcion": "Ideas básicas sobre activos, pasivos y educación financiera." },
+    { "id": 5, "titulo": "El hombre más rico de Babilonia", "autor": "George S. Clason", "categoria": "finanzas", "precio": 39.9, "stock": 20, "destacado": false, "portada": "#C9A227", "tinta": "#1B1B18", "descripcion": "Principios de ahorro e inversión contados a través de historias." },
+    { "id": 6, "titulo": "Piense y hágase rico", "autor": "Napoleon Hill", "categoria": "finanzas", "precio": 44.9, "stock": 0, "destacado": false, "portada": "#1B1B18", "tinta": "#F4F1EA", "descripcion": "Un clásico sobre metas, persistencia y mentalidad para progresar." },
+    { "id": 7, "titulo": "El hombre en busca de sentido", "autor": "Viktor Frankl", "categoria": "bienestar", "precio": 49.9, "stock": 10, "destacado": true, "portada": "#1F3D2B", "tinta": "#F4F1EA", "descripcion": "Reflexiones sobre encontrar un propósito incluso en los momentos difíciles." },
+    { "id": 8, "titulo": "El poder del ahora", "autor": "Eckhart Tolle", "categoria": "bienestar", "precio": 59.9, "stock": 7, "destacado": false, "portada": "#A9C5A0", "tinta": "#1B1B18", "descripcion": "Una guía para vivir el presente y reducir la ansiedad." },
+    { "id": 9, "titulo": "Los cuatro acuerdos", "autor": "Miguel Ruiz", "categoria": "bienestar", "precio": 42.9, "stock": 9, "destacado": false, "portada": "#D96C6C", "tinta": "#FFFFFF", "descripcion": "Cuatro principios simples para mejorar la forma en que nos relacionamos." },
+    { "id": 10, "titulo": "Los 7 hábitos de la gente altamente efectiva", "autor": "Stephen R. Covey", "categoria": "liderazgo", "precio": 74.9, "stock": 6, "destacado": true, "portada": "#5B8C5A", "tinta": "#FFFFFF", "descripcion": "Un método para ser más efectivo en el trabajo y en la vida personal." },
+    { "id": 11, "titulo": "Cómo ganar amigos e influir sobre las personas", "autor": "Dale Carnegie", "categoria": "liderazgo", "precio": 49.9, "stock": 11, "destacado": false, "portada": "#E9A23B", "tinta": "#1B1B18", "descripcion": "Consejos prácticos para comunicarse mejor y crear buenas relaciones." },
+    { "id": 12, "titulo": "Inteligencia emocional", "autor": "Daniel Goleman", "categoria": "liderazgo", "precio": 69.9, "stock": 4, "destacado": false, "portada": "#2F5D73", "tinta": "#FFFFFF", "descripcion": "Por qué manejar las emociones importa tanto como el coeficiente intelectual." }
+  ],
+  "mensajes": [],
+  "suscriptores": []
+}

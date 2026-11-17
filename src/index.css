@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Inter:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+/* Guía de estilos de Brote Libros: colores y tipografías */
+@theme {
+  --color-brand-green: #1F3D2B;
+  --color-brand-green-dark: #0F2418;
+  --color-brand-green-soft: #2A4D37;
+  --color-brand-accent: #F0A35E;
+  --color-brand-accent-dark: #E08A3C;
+  --color-brand-bg: #F4F1EA;
+  --color-brand-ink: #1B1B18;
+  --color-brand-muted: #4A4A42;
+  --color-brand-sage: #A9C5A0;
+  --color-brand-line: #E2DDD1;
+
+  --font-display: "Bricolage Grotesque", sans-serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-brand-bg text-brand-ink font-sans antialiased;
+}
